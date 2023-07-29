@@ -402,3 +402,11 @@ summary svg {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+body{
+  background-color: white;
+}
+.main-wrapper{
+  padding:2rem;
+}

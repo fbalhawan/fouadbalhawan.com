@@ -6,29 +6,26 @@ import Image, { StaticImageData } from "next/image";
 const styles = {
 };
 
-interface WrapperProps {
+interface CommonProps {
   children: ReactNode;
   className?: string;
   hoverable?: boolean;
-  imageSrc?: StaticImageData;
 }
 
+type ConditionalProps =
+  | {
+    imageSrc?: StaticImageData;
+    icon?: never;
+  }
+  | {
+    imageSrc?: never;
+    icon?: string;
+  }
+
+// Discriminated Union: https://www.typescriptlang.org/docs/handbook/2/narrowing.html#discriminated-unions
+type WrapperProps = CommonProps & ConditionalProps;
+
 export default function BrutalDiv(props: WrapperProps) {
-  const [hover, setHover] = useState(false);
-
-  const mouseEnter = function () {
-    if (props.hoverable) {
-      console.log("setHover");
-      setHover(true);
-    }
-  }
-  const mouseLeave = function () {
-    if (hover) {
-      console.log("setHover false");
-      setHover(false);
-    }
-  }
-
   return (
     <div
       className={`
@@ -40,6 +37,18 @@ export default function BrutalDiv(props: WrapperProps) {
                   relative
                    h-80
                   ${props.className ?? ''}`}>
+
+      {props.icon &&
+        <p
+          className={` text-8xl mb-4`}
+          style={{
+            textShadow: `-1px 0px 0px black,
+                    4px 4px 0px black,
+                    0px -1px 0px black,
+                    4px 4px 0px black`
+          }}
+        >{props.icon}</p>
+      }
 
       {props.imageSrc &&
         <Image

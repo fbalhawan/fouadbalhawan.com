@@ -5,6 +5,7 @@
       "runner": "nx-cloud",
       "options": {
         "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "cacheDirectory": "/tmp/nx-cache",
         "accessToken": "ZWI0OTA5YTctOGIwZS00NjViLWE3ZmUtZDQzYjJkOTRiMzMxfHJlYWQtd3JpdGU="
       }
     }

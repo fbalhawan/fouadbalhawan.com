@@ -1,0 +1,32 @@
+[
+    {
+        "company": "Konfidio",
+        "title": "Senior Software Engineer",
+        "body": [
+            "A transparent and easy to use logistics platform that helps Carriers and Forwarders collaborate to build trusted grow-driven business relationship."
+        ],
+        "imageSrc": "/images/trucks.jpg",
+        "skills": ["Node.js","TypeScript", "React", "PostgreSQL", "Redis", "Queues","Solidity","Kubernetes","Docker", "Git"],
+        "link": ""
+    },
+    {
+        "company": "MakersGround",
+        "title": "Managing Partner",
+        "body": [
+            "Assemble a remote dedicated team to design and develop quick IoT & Software solutions for startups and SMEs, by helping them validate the market quick and incrementally"
+        ],
+        "imageSrc": "/images/makersground-rect.jpg",
+        "skills": ["Node.js","TypeScript","MySQL","ReactNative","IoT","RaspberryPi"],
+        "link": ""
+    },
+    {
+        "company": "Binary Analytics",
+        "title": "Tech Lead",
+        "body": [
+            "A data capture, interpretation, and solution implementation through gamification. Its goal is to engage people around skill-enhancing games and lead them to better perform at their jobs while having fun."
+        ],
+        "imageSrc": "/images/binary.jpg",
+        "skills": ["Node.js","TypeScript","MySQL", "Charts", "React","Docker","Kubernetes","Docker", "Git", "IoT", "Ejs", "RaspberryPi"],
+        "link": ""
+    }
+]

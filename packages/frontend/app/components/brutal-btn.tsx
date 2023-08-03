@@ -1,5 +1,5 @@
 'use client';
-import { Component, PropsWithChildren, ReactNode } from "react";
+import { Component, EventHandler, PropsWithChildren, ReactNode } from "react";
 
 
 import { COLORS } from './constants';
@@ -7,19 +7,22 @@ import { COLORS } from './constants';
 const styles = {
 };
 
-interface WrapperProps {
+interface ButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
     children: ReactNode;
     className?: string;
 }
 
 const btnClass = ``;
-export default function BrutalBtn(props: WrapperProps) {
+export default function BrutalBtn(props: ButtonProps) {
     console.log('btn re-rending')
     return (
         <div className="m-4">
-            <a
-            onClick={(e)=>{
-                console.log("clicked");
+            <a  
+            onClick={(event)=>{
+                if(props.onClick){
+                    props.onClick(event);
+                }
+                
             }}
             className={` pt-3 pb-3 pl-4 pr-4
             bg-teal-300 shadow-[3px_3px_0px_0px_rgba(0,0,0)]

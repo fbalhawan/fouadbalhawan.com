@@ -13,6 +13,8 @@ export default function FirstSection() {
             <div className='basis-1/2'>
                 <Image
                     className={`relative max-w-xs sm:max-w-xl float-right order-first lg:order-last`}
+                    loading="lazy"
+                    quality={10}
                     src={profilePic}
                     alt="Picture of author" />
             </div>

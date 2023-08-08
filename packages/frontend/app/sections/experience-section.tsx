@@ -32,6 +32,8 @@ export default function ExperienceSection(props: WrapperProps) {
                 <Image src={props.imageSrc}
                     width={500}
                     height={500}
+                    loading="lazy"
+                    quality={40}
                     className=''
                     style={{
                         width: '100%',

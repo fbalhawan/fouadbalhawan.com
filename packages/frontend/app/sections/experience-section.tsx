@@ -12,9 +12,9 @@ interface WrapperProps {
 }
 export default function ExperienceSection(props: WrapperProps) {
     return (
-        <div className={`grid grid-cols-1 sm:grid-cols-2`}>
-            <div className={`order-first bg-white w-auto relative flex ${props.reverse && 'sm:order-last'}`}>
-                <div className={`m-auto max-w-3xl`}>
+        <div className={`grid grid-cols-1 lg:grid-cols-2`}>
+            <div className={`order-first bg-white w-auto relative flex ${props.reverse && 'lg:order-last'}`}>
+                <div className={`m-auto max-w-3xl p-5`}>
                     <h2 className="mt-10">{props.title}</h2>
                     <h3 className="mb-10">{props.company}</h3>
                     <div>

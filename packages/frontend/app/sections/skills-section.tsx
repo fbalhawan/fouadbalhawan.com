@@ -42,7 +42,7 @@ export default function SkillsSection() {
     return (
 
 
-        <div className={`grid grid-cols-1 gap-y-10 sm:grid-cols-3 sm:gap-x-16 pr-10 pl-10`}>
+        <div className={`grid grid-cols-1 gap-y-10 lg:grid-cols-3 sm:gap-x-16 pr-5 pl-5`}>
             <BrutalDiv title='Coding' icon='🕸' className='  bg-teal-50'>
                 {
                     codingSkills.map((val, i) => {

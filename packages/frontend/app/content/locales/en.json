@@ -1,5 +1,21 @@
 {
-    "intro":"Hi, my name is Fouad.",
-    "title":"",
-    "bio":""
+  "intro": "Hi, my name is Fouad.",
+  "title": "I implmenet Fullstack Applications",
+  "bio": "I'm a Senior Software Engineer, with extensive experience in building highly scalable backends and user-friendly frontends",
+  "my_technical_skills": "My Technical Skills",
+  "coding": "Coding",
+  "devops": "DevOps",
+  "management": "Management",
+  "my_roles": "My Roles",
+  "konfidio_title": "Senior Software Engineer",
+  "konfidio": "Konfidio",
+  "konfidio_desc": "A transparent and easy to use logistics platform that helps Carriers and Forwarders collaborate to build trusted grow-driven business relationship.",
+  "mg_title": "Managing Partner",
+  "mg": "MakersGround",
+  "mg_desc": "Assemble a remote dedicated team to design and develop quick IoT & Software solutions for startups and SMEs, by helping them validate the market quick and incrementally",
+  "ba_title": "Tech Lead",
+  "ba": "Binary Analytics",
+  "ba_desc": "A data capture, interpretation, and solution implementation through gamification. Its goal is to engage people around skill-enhancing games and lead them to better perform at their jobs while having fun.",
+  "and_many_more":"And many more",
+  "download_resume":"Download My Resume"
 }

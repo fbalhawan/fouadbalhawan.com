@@ -1,5 +1,51 @@
 {
+  "and_many_more": [
+    {
+      "type": 0,
+      "value": "And many more"
+    }
+  ],
+  "ba": [
+    {
+      "type": 0,
+      "value": "Binary Analytics"
+    }
+  ],
+  "ba_desc": [
+    {
+      "type": 0,
+      "value": "A data capture, interpretation, and solution implementation through gamification. Its goal is to engage people around skill-enhancing games and lead them to better perform at their jobs while having fun."
+    }
+  ],
+  "ba_title": [
+    {
+      "type": 0,
+      "value": "Tech Lead"
+    }
+  ],
   "bio": [
+    {
+      "type": 0,
+      "value": "I'm a Senior Software Engineer, with extensive experience in building highly scalable backends and user-friendly frontends"
+    }
+  ],
+  "coding": [
+    {
+      "type": 0,
+      "value": "Coding"
+    }
+  ],
+  "devops": [
+    {
+      "type": 0,
+      "value": "DevOps"
+    }
+  ],
+  "download_resume": [
+    {
+      "type": 0,
+      "value": "Download My Resume"
+    }
   ],
   "intro": [
     {
@@ -7,6 +53,64 @@
       "value": "Hi, my name is Fouad."
     }
   ],
+  "konfidio": [
+    {
+      "type": 0,
+      "value": "Konfidio"
+    }
+  ],
+  "konfidio_desc": [
+    {
+      "type": 0,
+      "value": "A transparent and easy to use logistics platform that helps Carriers and Forwarders collaborate to build trusted grow-driven business relationship."
+    }
+  ],
+  "konfidio_title": [
+    {
+      "type": 0,
+      "value": "Senior Software Engineer"
+    }
+  ],
+  "management": [
+    {
+      "type": 0,
+      "value": "Management"
+    }
+  ],
+  "mg": [
+    {
+      "type": 0,
+      "value": "MakersGround"
+    }
+  ],
+  "mg_desc": [
+    {
+      "type": 0,
+      "value": "Assemble a remote dedicated team to design and develop quick IoT & Software solutions for startups and SMEs, by helping them validate the market quick and incrementally"
+    }
+  ],
+  "mg_title": [
+    {
+      "type": 0,
+      "value": "Managing Partner"
+    }
+  ],
+  "my_roles": [
+    {
+      "type": 0,
+      "value": "My Roles"
+    }
+  ],
+  "my_technical_skills": [
+    {
+      "type": 0,
+      "value": "My Technical Skills"
+    }
+  ],
   "title": [
+    {
+      "type": 0,
+      "value": "I implmenet Fullstack Applications"
+    }
   ]
 }

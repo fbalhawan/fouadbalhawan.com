@@ -1,7 +1,8 @@
 import BrutalDiv from "../components/brutal-div"
 import DevIcon from "../components/dev-icon"
-
+import {useIntl} from "react-intl";
 export default function SkillsSection() {
+    const intl = useIntl();
     const codingSkills = [
         'Node.js',
         'TypeScript',
@@ -43,7 +44,7 @@ export default function SkillsSection() {
 
 
         <div className={`grid grid-cols-1 gap-y-10 lg:grid-cols-3 sm:gap-x-16 pr-5 pl-5`}>
-            <BrutalDiv title='Coding' icon='🕸' className='  bg-teal-50'>
+            <BrutalDiv title={intl.formatMessage({id: 'coding'})} icon='🕸' className='  bg-teal-50'>
                 {
                     codingSkills.map((val, i) => {
                         return <DevIcon key={i} label={val} icon={val} />
@@ -51,7 +52,7 @@ export default function SkillsSection() {
                 }
             </BrutalDiv>
 
-            <BrutalDiv icon='⚙️' title='DevOps' className='bg-purple-100'>
+            <BrutalDiv icon='⚙️' title={intl.formatMessage({id: 'devops'})} className='bg-purple-100'>
                 {
                     devOpsSkills.map((val, i) => {
                         return <DevIcon key={i} label={val} icon={val} />
@@ -59,7 +60,7 @@ export default function SkillsSection() {
                 }
             </BrutalDiv>
 
-            <BrutalDiv icon='👨🏻‍💻' title='Management' className=' bg-lime-100'>
+            <BrutalDiv icon='👨🏻‍💻' title={intl.formatMessage({id: 'management'})} className=' bg-lime-100'>
                 {
                     managementSkills.map((val, i) => {
                         return <DevIcon key={i} label={val} icon={val} />

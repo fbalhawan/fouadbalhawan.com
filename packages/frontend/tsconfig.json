@@ -21,12 +21,13 @@
   "include": [
     "**/*.ts",
     "**/*.tsx",
+    "**/pages/*.tsx",
     "**/*.js",
     "**/*.jsx",
     "../../packages/frontend/.next/types/**/*.ts",
     "../../dist/packages/frontend/.next/types/**/*.ts",
     "next-env.d.ts"
-  ],
+,   "pages"  ],
   "exclude": [
     "node_modules",
     "jest.config.ts",

@@ -2,13 +2,32 @@ import type { AppProps } from 'next/app';
 import Layout from '../app/components/layout';
 import Link from 'next/link';
 import Head from 'next/head';
+import English from '../app/content/compiled-locales/en.json';
+import Arabic from '../app/content/compiled-locales/ar.json';
+import { useRouter } from 'next/router';
+import { useMemo } from 'react';
+import {IntlProvider, FormattedMessage, FormattedNumber} from 'react-intl'
 // export const metadata = {
 //   title: 'Welcome to my Portfolio',
 //   description: 'Hire a senior software engineer for your scalable backends',
 // };
 export default function MyApp({ Component, pageProps }: AppProps) {
+  const { locale } = useRouter();
+  const [shortLocale] = locale ? locale.split('-') : ['en'];
+
+  const messages = useMemo(() => {
+    switch (shortLocale) {
+      case 'ar':
+        return Arabic;
+      case 'en':
+        return English;
+      default:
+        return English;
+    }
+  }, [shortLocale]);
+
   return (
-    <>
+    <IntlProvider locale={shortLocale} messages={messages} onError={()=>null}>
       <Head>
         <title>Welcome to my Portfolio</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,11 +37,10 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           rel="stylesheet"
         />
         <link rel="stylesheet" href="/icons/devicon-master/devicon.min.css" />
-        
       </Head>
       <Layout>
         <Component {...pageProps} />
       </Layout>
-    </>
+    </IntlProvider>
   );
 }

@@ -14,7 +14,6 @@ interface ButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
 
 const btnClass = ``;
 export default function BrutalBtn(props: ButtonProps) {
-    console.log('btn re-rending')
     return (
         <div className="m-4">
             <a  

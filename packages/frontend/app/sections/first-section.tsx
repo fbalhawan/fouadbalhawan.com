@@ -6,7 +6,7 @@ export default function FirstSection() {
   const intl = useIntl();
   return (
     <div
-      className={`flex flex-wrap justify-center max-w-screen-xl mx-auto lg:justify-start`}
+      className={`flex flex-wrap justify-center max-w-screen-xl mx-auto lg:justify-start my-20`}
     >
       <div className="mt-6 relative basis-1/2 order-last lg:order-first">
         <h3 className="">

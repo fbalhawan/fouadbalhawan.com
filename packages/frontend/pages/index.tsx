@@ -58,9 +58,11 @@ export default function Index() {
         <div className="my-0 mx-auto inline-block text-center">
           <h3>{intl.formatMessage({id: 'and_many_more'})}</h3>
           <BrutalBtn
-            onClick={(event) => {
-              window.open(RESUME_URL, '_blank');
-            }}
+            href={RESUME_URL}
+            target='blank'
+            // onClick={(event) => {
+            //   window.open(RESUME_URL, '_blank');
+            // }}
           >
             {intl.formatMessage({id: 'download_resume'})}
           </BrutalBtn>

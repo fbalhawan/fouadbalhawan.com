@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "serve": "rm -rf packages/frontend/app/content/compiled-locales && npm run i18n && nx run frontend:build && nx run frontend:serve",
+    "serve": "rm -rf packages/frontend/app/content/compiled-locales && nx run frontend:build && nx run frontend:serve",
     "watch": "nx run frontend:build && nx run frontend:serve:watch",
-    "build": "rm -rf packages/frontend/app/content/compiled-locales && npm run i18n && nx run-many --target=build --nx-ignore-cycles",
+    "build": "rm -rf packages/frontend/app/content/compiled-locales && nx run-many --target=build --nx-ignore-cycles",
     "extract:i18n": "formatjs extract '{pages,components,sections}/**/*.{js,ts,tsx}' --format simple --id-interpolation-pattern '[sha512:contenthash:base64:6]' --out-file content/locales/en.json",
     "compile:i18n": "formatjs compile-folder --ast --format simple packages/frontend/app/content/locales packages/frontend/app/content/compiled-locales",
     "i18n": "npm run extract:i18n && npm run compile:i18n"

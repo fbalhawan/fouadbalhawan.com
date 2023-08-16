@@ -2,8 +2,7 @@ import type { AppProps } from 'next/app';
 import Layout from '../app/components/layout';
 import Link from 'next/link';
 import Head from 'next/head';
-import English from '../app/content/compiled-locales/en.json';
-import Arabic from '../app/content/compiled-locales/ar.json';
+import English from '../app/content/locales/en.json';
 import { useRouter } from 'next/router';
 import { useMemo } from 'react';
 import {IntlProvider, FormattedMessage, FormattedNumber} from 'react-intl'
@@ -17,8 +16,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
   const messages = useMemo(() => {
     switch (shortLocale) {
-      case 'ar':
-        return Arabic;
       case 'en':
         return English;
       default:

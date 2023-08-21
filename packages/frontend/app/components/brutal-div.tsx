@@ -30,7 +30,7 @@ export default function BrutalDiv(props: WrapperProps) {
   return (
     <div
       style={{
-        background: props.bgColor ?? 'auto',
+        background: props.bgColor ?? 'none',
       }}
       className={`
                   m-1 p-4

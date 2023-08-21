@@ -3,6 +3,7 @@
 interface InputProps {
     className?: string;
     icon?: any;
+    placeholder?: string;
 }
 
 export default function BrutalInput(props: InputProps) {
@@ -16,10 +17,11 @@ export default function BrutalInput(props: InputProps) {
             }
 
             <input
+            placeholder={props.placeholder}
                 className={` pt-3 pb-3 pl-4 pr-4
                  ${props.icon && 'indent-8'}
-             bg-slate-500 shadow-[3px_3px_0px_0px_rgba(0,0,0)]
-             text-slate-100
+              shadow-[3px_3px_0px_0px_rgba(0,0,0)]
+             
             rounded-full border-black border
             `} />
         </div>

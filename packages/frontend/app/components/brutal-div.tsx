@@ -46,8 +46,7 @@ export default function BrutalDiv(props: WrapperProps) {
                    h-auto
                   ${props.className ?? ''}`}
     >
-      {props.icon ||
-        (props.title && (
+      {(props.icon || props.title) && (
           <div className="grid grid-cols-3 sm:grid-cols-4 mb-4">
             {props.icon && (
               <span
@@ -65,7 +64,7 @@ export default function BrutalDiv(props: WrapperProps) {
 
             {props.title && <h2 className={` m-auto`}>{props.title}</h2>}
           </div>
-        ))}
+        )}
 
       {props.imageSrc && (
         <Image

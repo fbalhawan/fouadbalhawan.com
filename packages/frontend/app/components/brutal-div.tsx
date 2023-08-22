@@ -11,6 +11,7 @@ interface CommonProps {
   bgColor?: string;
   title?: string;
   hoverable?: boolean;
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
 }
 
 type ConditionalProps =
@@ -29,6 +30,7 @@ type WrapperProps = CommonProps & ConditionalProps;
 export default function BrutalDiv(props: WrapperProps) {
   return (
     <div
+      onClick={props.onClick ? props.onClick : undefined}
       style={{
         background: props.bgColor ?? 'none',
       }}

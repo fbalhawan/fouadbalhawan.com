@@ -4,6 +4,7 @@
     "jsx": "preserve",
     "allowJs": true,
     "esModuleInterop": true,
+    "baseUrl": "./app",
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,

@@ -1,11 +1,12 @@
 import { InferGetServerSidePropsType } from 'next';
 import { getAllPosts } from '../../app/lib/sanity/client';
 import { urlForImage } from '../../app/lib/sanity/image';
-import BrutalDiv from 'packages/frontend/app/components/brutal-div';
+import BrutalDiv from '../../app/components/brutal-div';
 import ArrowBackIosNewRoundedIcon from '@mui/icons-material/ArrowBackIosNewRounded';
 import Image from 'next/image';
 import moment from 'moment';
-import BrutalInput from 'packages/frontend/app/components/brutal-input';
+import { useRouter } from 'next/navigation'
+// import BrutalInput from 'packages/frontend/app/components/brutal-input';
 
 type Asset = {
   _ref: string;
@@ -61,6 +62,7 @@ export default function Blog({
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   console.log(posts[0]);
   console.log(urlForImage(posts[0].mainImage)?.src);
+  const router = useRouter()
   return (
     <div className="container mx-auto">
       <div className="grid grid-cols-10 gap-x-16 my-10">
@@ -81,6 +83,14 @@ export default function Blog({
           return (
             <BrutalDiv
               hoverable={true}
+              onClick={()=>{
+                try{
+                  router.push(`blog/${post?.slug?.current}`);
+                }
+                catch(e){
+                  console.error(e);
+                }
+               }}
               imageSrc={urlForImage(post?.mainImage)?.src}
               className={`bg-indigo-300 col-span-3 lg:col-span-1 h-auto min-h-[500px]`}
             >

@@ -47,6 +47,9 @@ dependencies:
   bootstrap:
     specifier: ^5.3.1
     version: 5.3.1(@popperjs/core@2.11.8)
+  get-video-id:
+    specifier: ^3.6.5
+    version: 3.6.5
   moment:
     specifier: ^2.29.4
     version: 2.29.4
@@ -9429,6 +9432,11 @@ packages:
       readable-stream: 2.3.8
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /get-video-id@3.6.5:
+    resolution: {integrity: sha512-9RPHSQANIeGW5rU3CjWdm1zi+wUHbBWX+m4m+dqQAavrZ9p1P1J7AbxGvVEEHRyGfGrmMf5PqiRWYMyfqM+QYA==}
+    engines: {node: '>=10'}
     dev: false
 
   /getos@3.2.1:

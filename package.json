@@ -26,6 +26,7 @@
     "@sanity/vision": "^3.15.1",
     "@swc/helpers": "~0.5.0",
     "bootstrap": "^5.3.1",
+    "get-video-id": "^3.6.5",
     "moment": "^2.29.4",
     "next": "13.4.1",
     "next-sanity": "^5.2.7",

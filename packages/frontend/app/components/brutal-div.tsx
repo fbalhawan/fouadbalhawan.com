@@ -1,6 +1,6 @@
 'use client';
 
-import { ReactNode, useState } from 'react';
+import { CSSProperties, ReactNode, useState } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import TailwindColor from '../utils/TailwindColor';
 const styles = {};
@@ -8,7 +8,7 @@ const styles = {};
 interface CommonProps {
   children: ReactNode;
   className?: string;
-  bgColor?: string;
+  style?: CSSProperties;
   title?: string;
   hoverable?: boolean;
   onClick?: React.MouseEventHandler<HTMLDivElement>;
@@ -31,9 +31,7 @@ export default function BrutalDiv(props: WrapperProps) {
   return (
     <div
       onClick={props.onClick ? props.onClick : undefined}
-      style={{
-        background: props.bgColor ?? 'none',
-      }}
+      style={props.style}
       className={`
                   m-1 p-4
                   shadow-[3px_3px_0px_0px_rgba(0,0,0)]

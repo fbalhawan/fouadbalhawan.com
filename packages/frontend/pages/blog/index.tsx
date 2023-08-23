@@ -60,8 +60,7 @@ export async function getServerSideProps() {
 export default function Blog({
   posts,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  console.log(posts[0]);
-  console.log(urlForImage(posts[0].mainImage)?.src);
+  
   const router = useRouter()
   return (
     <div className="container mx-auto">

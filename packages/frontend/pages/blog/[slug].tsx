@@ -68,7 +68,7 @@ export default function BlogPost({
 
         {/* <BrutalInput placeholder='Search' className=' text-black' /> */}
       </div>
-      <div className="relative z-0 mx-auto aspect-video max-w-screen-lg overflow-hidden lg:rounded-lg">
+      <div className="relative z-0 mx-auto aspect-video max-w-screen-2xl overflow-hidden rounded-xl mb-10">
         {imageProps && (
           <Image
             src={imageProps.src}

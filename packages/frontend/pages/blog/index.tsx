@@ -63,7 +63,7 @@ export default function Blog({
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const router = useRouter();
   return (
-    <div className="mx-auto">
+    <div className="mx-auto mb-20">
       <div className="container mx-auto">
         <div className="grid grid-cols-10 gap-x-16 my-10">
           <a className="my-auto" href="/">

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { PortableText as PortableTextComponent } from "@portabletext/react";
-import { urlForImage } from "../../sanity/image";
+import { urlForImage } from "../image";
 import Iframe from "react-iframe";
 import getVideoId from "get-video-id";
 import { cx } from "../../../utils/all";

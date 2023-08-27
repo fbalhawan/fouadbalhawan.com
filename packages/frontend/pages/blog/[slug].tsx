@@ -1,9 +1,12 @@
-import { getAllPostsSlugs, getPostBySlug } from 'lib/sanity/client';
+import { getAllPostsSlugs, getPostBySlug, client } from 'lib/sanity/client';
 import { InferGetServerSidePropsType } from 'next';
 import { urlForImage } from '../../app/lib/sanity/image';
-import { PortableText } from '../../app/lib/sanity/plugins/portabletext';
+import imageUrlBuilder from '@sanity/image-url';
+import { PortableText } from '../../app/lib/sanity/plugins/serializer';
+// import { PortableText } from '@portabletext/react';
 import ArrowBackIosNewRoundedIcon from '@mui/icons-material/ArrowBackIosNewRounded';
 import Image from 'next/image';
+import { ImageUrlBuilder } from '@sanity/image-url/lib/types/builder';
 export async function getServerSideProps({ params }: any) {
   const post = await getPostBySlug(params.slug);
   return {
@@ -13,10 +16,41 @@ export async function getServerSideProps({ params }: any) {
   };
 }
 
+function urlFor(source: string) {
+  if (client) {
+    return imageUrlBuilder(client).image(source);
+  } else {
+    return imageUrlBuilder();
+  }
+}
+
+const ptComponents = {
+  types: {
+    image: ({ value }: any) => {
+      if (!value?.asset?._ref) {
+        return null;
+      }
+      if (typeof urlFor !== 'undefined' && value) {
+        const src = urlFor(value).fit('max').auto('format');
+        return (
+          <img alt={value.alt || ' '} loading="lazy" src={src.toString()} />
+        );
+      }
+    },
+    code: ({ value }: any) => {
+      console.log("value: ",value);
+      return (
+      <pre data-language={value.language} className=' p-5 bg-slate-300 rounded-xl'>
+        <code>{value.code}</code>
+      </pre>
+      );
+    },
+  },
+};
+
 export default function BlogPost({
   post,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  console.log(post);
   const imageProps = post?.mainImage ? urlForImage(post?.mainImage) : null;
 
   const AuthorimageProps = post?.author?.image
@@ -24,7 +58,7 @@ export default function BlogPost({
     : null;
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto mb-20">
       <div className="grid grid-cols-10 gap-x-16 my-10">
         <a className="my-auto" href="/blog">
           <ArrowBackIosNewRoundedIcon sx={{ fontSize: 50 }} />
@@ -46,7 +80,11 @@ export default function BlogPost({
           />
         )}
       </div>
-      <div>{post.body && <PortableText value={post.body} />}</div>
+      <div>
+        {post.body && (
+          <PortableText value={post.body} components={ptComponents} />
+        )}
+      </div>
     </div>
   );
 }

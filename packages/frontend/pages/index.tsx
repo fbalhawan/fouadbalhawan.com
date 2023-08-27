@@ -5,10 +5,15 @@ import SkillsSection from '../app/sections/skills-section';
 import ExperienceSection from '../app/sections/experience-section';
 import { useIntl } from 'react-intl';
 import Footer from '../app/components/footer';
+import BrutalBtn from 'components/brutal-btn';
 export default function Index() {
   const intl = useIntl();
   return (
     <div className="mx-auto">
+      <div className='flex flex-row-reverse pt-5 max-w-screen-xl mx-auto'>
+        {/* <a href='/blog'>Blog</a> */}
+        <BrutalBtn href='/blog'>Blog</BrutalBtn>
+      </div>
       {/* First Section */}
       <FirstSection />
 

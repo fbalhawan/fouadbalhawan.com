@@ -17,12 +17,11 @@ export default function BrutalBtn(props: ButtonProps) {
       <a
         href={props.href}
         target={props.target}
-        // onClick={(event)=>{
-        //     if(props.onClick){
-        //         props.onClick(event);
-        //     }
-
-        // }}
+        onClick={(event)=>{
+            if(props.onClick){
+                props.onClick(event);
+            }
+        }}
         className={` pt-3 pb-3 pl-4 pr-4
             bg-teal-300 shadow-[3px_3px_0px_0px_rgba(0,0,0)]
             rounded-full border-black border

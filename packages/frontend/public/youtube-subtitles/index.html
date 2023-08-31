@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube SRT Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body>
+    <div id="app" class="container mt-5">
+        <h1 class="mb-4">YouTube SRT Generator</h1>
+        
+        <div class="input-group mb-3">
+            <input type="text" id="videoURL" class="form-control" placeholder="Enter YouTube URL">
+            <div class="input-group-append">
+                <button onclick="loadVideo()" class="btn btn-primary">Load Video</button>
+            </div>
+        </div>
+    
+        <div id="videoContainer" class="mb-3"></div>
+    
+        <div class="btn-group mb-3" role="group">
+            <button id="setStartTime" class="btn btn-secondary">Set Start Time</button>
+            <button id="setEndTime" class="btn btn-secondary">Set End Time</button>
+        </div>
+        
+        <div class="form-row mb-3">
+            <div class="col">
+                <input type="text" id="startTime" class="form-control" placeholder="Start time (e.g. 00:00:01,000)">
+            </div>
+            <div class="col">
+                <input type="text" id="endTime" class="form-control" placeholder="End time (e.g. 00:00:03,000)">
+            </div>
+        </div>
+    
+        <textarea id="subtitleText" class="form-control mb-3" placeholder="Enter subtitle..." rows="3"></textarea>
+    
+        <button onclick="addSubtitle()" class="btn btn-success mb-3">Add Subtitle</button>
+    
+        <h4 class="mb-3">Subtitles</h4>
+        <div id="subtitlesList"></div>
+    
+        <button onclick="exportSRT()" class="btn btn-info mt-3">Export SRT</button>
+    </div>
+    
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>

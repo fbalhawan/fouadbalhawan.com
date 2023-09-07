@@ -1,0 +1,5 @@
+{
+    "rewrites": [
+      { "source": "/studio/(.*)", "destination": "https://sanity-fbalhawan.vercel.app/$1" }
+    ]
+  }

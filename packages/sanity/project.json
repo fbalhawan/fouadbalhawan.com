@@ -1,34 +1,69 @@
 {
-    "name": "sanity",
-    "projectType": "application",
-    "scripts": {
-      "test": "jest",
-      "build": "tsc -p tsconfig.lib.json",
-      "lint": "echo hi",
-      "ignored": "exit 1"
+  "name": "sanity",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/sanity",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "command": "sanity build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/packages/sanity"
+      },
+      "configurations": {
+        "development": {
+          "outputPath": "packages/sanity"
+        },
+        "production": {}
+      }
     },
-    "nx": {
-      "namedInputs": {
-        "default": ["{projectRoot}/**/*"],
-        "production": ["!{projectRoot}/**/*.spec.tsx"]
+    "serve": {
+      "command": "sanity dev",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "sanity build",
+        "dev": true,
+        "port": 1234
       },
-      "targets": {
-        "build": {
-          "inputs": ["production", "^production"],
-          "outputs": ["{workspaceRoot}/dist/libs/mylib"],
-          "dependsOn": ["^build"]
+      "configurations": {
+        "development": {
+          "buildTarget": "sanity build",
+          "dev": true
         },
-        "test": {
-          "inputs": ["default", "^production"],
-          "outputs": [],
-          "dependsOn": ["build"]
-        },
-        "lint":{
-            "inputs": ["default", "^production"],
-            "outputs": [],
-            "dependsOn": ["build"]
+        "production": {
+          "buildTarget": "sanity build",
+          "dev": false
         }
+      }
+    },
+    "export": {
+      "executor": "@nx/next:export",
+      "options": {
+        "buildTarget": "frontend:build:production"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "packages/frontend/jest.config.ts",
+        "passWithNoTests": true
       },
-      "includedScripts": ["test", "build", "lint"]
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/frontend/**/*.{ts,tsx,js,jsx}"]
+      }
     }
-  }
+  },
+  "tags": []
+}

@@ -5,7 +5,7 @@
   "main": "package.json",
   "license": "UNLICENSED",
   "scripts": {
-    "dev": "sanity dev",
+    "serve": "sanity dev",
     "start": "sanity start",
     "inst": "pnpm install",
     "build": "sanity build",

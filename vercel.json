@@ -1,5 +1,11 @@
 {
-    "rewrites": [
-      { "source": "/studio", "destination": "https://sanity-fbalhawan.vercel.app" }
-    ]
-  }
+  "env": {
+    "SANITY_URL":"@NEXT_PUBLIC_SANITY_STUDIO_URL"
+  },
+  "rewrites": [
+    {
+      "source": "/studio",
+      "destination": "${SANITY_URL}"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "env": {
-    "SANITY_URL":"@sanity_studio_url"
+    "SANITY_URL":"@SANITY_STUDIO_URL"
     
   },
   "rewrites": [

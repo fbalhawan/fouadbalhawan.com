@@ -38,9 +38,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         />
         <link rel="stylesheet" href="/icons/devicon-master/devicon.min.css" />
       </Head>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <Script src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TAG}`} />
       <Script id="google-analytics">
        {`
           window.dataLayer = window.dataLayer || [];
@@ -49,7 +47,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           gtag('config', '${process.env.NEXT_PUBLIC_GA_TAG}');
         `}
       </Script>
-      <Script src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TAG}`} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </IntlProvider>
   );
 }

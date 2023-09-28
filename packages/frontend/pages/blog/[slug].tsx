@@ -1,6 +1,6 @@
 import { getAllPostsSlugs, getPostBySlug, client } from 'lib/sanity/client';
 import { InferGetServerSidePropsType } from 'next';
-import Title from 'next/title';
+import Head from 'next/head';
 import { urlForImage } from '../../app/lib/sanity/image';
 import imageUrlBuilder from '@sanity/image-url';
 import { PortableText } from '../../app/lib/sanity/plugins/serializer';
@@ -60,7 +60,9 @@ export default function BlogPost({
 
   return (
     <>
-    <Title>${post.title} | BlogPost</Title>
+    <Head>
+      <title>${post.title} | BlogPost</title>
+      </Head>
     <div className="container mx-auto mb-20">
       <div className="grid grid-cols-10 gap-x-16 my-10">
         <a className="my-auto" href="/blog">

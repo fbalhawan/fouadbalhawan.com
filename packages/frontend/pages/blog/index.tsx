@@ -4,6 +4,7 @@ import { urlForImage } from '../../app/lib/sanity/image';
 import BrutalDiv from '../../app/components/brutal-div';
 import ArrowBackIosNewRoundedIcon from '@mui/icons-material/ArrowBackIosNewRounded';
 import Image from 'next/image';
+import Head from 'next/head';
 import moment from 'moment';
 import heroImage from '../../public/images/blog-hero.png';
 import { useRouter } from 'next/navigation';
@@ -63,6 +64,8 @@ export default function Blog({
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const router = useRouter();
   return (
+    <>
+    <Head>From junior to senior software engineer | Blog</Head>
     <div className="mx-auto mb-20">
       <div className="container mx-auto">
         <div className="grid grid-cols-10 gap-x-16 my-10">
@@ -125,5 +128,6 @@ export default function Blog({
         </div>
       </div>
     </div>
+    </>
   );
 }

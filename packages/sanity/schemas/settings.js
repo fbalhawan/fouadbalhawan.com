@@ -159,7 +159,7 @@ export default defineType({
 
     defineField({
       title: "SEO Keywords",
-      name: "Keywords",
+      name: "keywords",
       fieldset: "metadata",
       type: "text",
       rows: 5,

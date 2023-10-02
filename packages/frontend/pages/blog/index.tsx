@@ -1,5 +1,5 @@
 import { InferGetServerSidePropsType } from 'next';
-import { getAllPosts } from '../../app/lib/sanity/client';
+import { getAllPosts, getSettings } from '../../app/lib/sanity/client';
 import { urlForImage } from '../../app/lib/sanity/image';
 import BrutalDiv from '../../app/components/brutal-div';
 import ArrowBackIosNewRoundedIcon from '@mui/icons-material/ArrowBackIosNewRounded';
@@ -52,21 +52,27 @@ type Post = {
 
 export async function getServerSideProps() {
   const posts: Array<Post> = await getAllPosts();
+  const settings: any = await getSettings();
   return {
     props: {
       posts,
+      settings: settings[1],
     },
   };
 }
 
 export default function Blog({
   posts,
+  settings,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const router = useRouter();
+
   return (
     <>
       <Head>
-        <title>From junior to senior software engineer | Blog</title>
+        <title>{settings.title}</title>
+        <meta name="description" content={settings.description}></meta>
+        <meta name="keywords" content={settings.keywords}></meta>
       </Head>
       <div className="mx-auto mb-20">
         <div className="container mx-auto">

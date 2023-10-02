@@ -44,7 +44,7 @@ export const paginatedquery = groq`
 
 // Get Site Config
 export const configQuery = groq`
-*[_type == "settings"][0] {
+*[_type == "settings"] {
   ...,
 }
 `;

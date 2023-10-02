@@ -28,8 +28,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <IntlProvider locale={shortLocale} messages={messages} onError={()=>null}>
       <Head>
-        <title>Welcome to my Portfolio</title>
-        <meta name="description" content="Welcome to my Portfolio. My name is Fouad and I'm a senior fullstack engineer. Let's get in touch and collaborate!"></meta>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link

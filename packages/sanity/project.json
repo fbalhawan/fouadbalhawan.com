@@ -19,7 +19,7 @@
       }
     },
     "serve": {
-      "command": "sanity dev",
+      "command": "sanity start",
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "sanity build",
@@ -34,26 +34,6 @@
         "production": {
           "buildTarget": "sanity build",
           "dev": false
-        }
-      }
-    },
-    "export": {
-      "executor": "@nx/next:export",
-      "options": {
-        "buildTarget": "frontend:build:production"
-      }
-    },
-    "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
-      "options": {
-        "jestConfig": "packages/frontend/jest.config.ts",
-        "passWithNoTests": true
-      },
-      "configurations": {
-        "ci": {
-          "ci": true,
-          "codeCoverage": true
         }
       }
     },

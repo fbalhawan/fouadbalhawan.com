@@ -2,8 +2,6 @@
 
 import { CSSProperties, ReactNode, useState } from 'react';
 import Image, { StaticImageData } from 'next/image';
-import TailwindColor from '../utils/TailwindColor';
-const styles = {};
 
 interface CommonProps {
   children: ReactNode;
@@ -40,7 +38,7 @@ export default function BrutalDiv(props: WrapperProps) {
                     props.hoverable
                       ? 'hover:shadow-[6px_6px_0px_0px_rgba(0,0,0)] transition ease-in-out hover:-translate-x-0.5 hover:-translate-y-0.5 hover:scale-100 duration-200 hover cursor-pointer'
                       : null
-                  } 
+                  }
                   ${props.imageSrc && ' pt-0 pr-0 pl-0'}
                   relative
                    h-auto

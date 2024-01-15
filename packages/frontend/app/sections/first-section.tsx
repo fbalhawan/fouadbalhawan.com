@@ -1,6 +1,6 @@
 import Image, { StaticImageData } from 'next/image';
 import profilePic from '../../public/images/profile-2.png';
-import { FormattedMessage, useIntl, injectIntl } from 'react-intl';
+import { useIntl } from 'react-intl';
 
 export default function FirstSection() {
   const intl = useIntl();
@@ -19,7 +19,7 @@ export default function FirstSection() {
         </h1>
 
         <h3>
-            {intl.formatMessage({ id: 'bio' })}    
+            {intl.formatMessage({ id: 'bio' })}
         </h3>
 
       </div>

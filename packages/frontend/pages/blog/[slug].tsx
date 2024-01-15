@@ -1,13 +1,12 @@
-import { getAllPostsSlugs, getPostBySlug, client } from 'lib/sanity/client';
+import { getPostBySlug, client } from 'lib/sanity/client';
 import { InferGetServerSidePropsType } from 'next';
 import Head from 'next/head';
 import { urlForImage } from '../../app/lib/sanity/image';
 import imageUrlBuilder from '@sanity/image-url';
 import { PortableText } from '../../app/lib/sanity/plugins/serializer';
-// import { PortableText } from '@portabletext/react';
 import ArrowBackIosNewRoundedIcon from '@mui/icons-material/ArrowBackIosNewRounded';
 import Image from 'next/image';
-import { ImageUrlBuilder } from '@sanity/image-url/lib/types/builder';
+import Link from 'next/link';
 export async function getServerSideProps({ params }: any) {
   const post = await getPostBySlug(params.slug);
   return {
@@ -54,10 +53,6 @@ export default function BlogPost({
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const imageProps = post?.mainImage ? urlForImage(post?.mainImage) : null;
 
-  const AuthorimageProps = post?.author?.image
-    ? urlForImage(post.author.image)
-    : null;
-
   return (
     <>
     <Head>
@@ -65,13 +60,12 @@ export default function BlogPost({
       </Head>
     <div className="container mx-auto mb-20">
       <div className="grid grid-cols-10 gap-x-16 my-10">
-        <a className="my-auto" href="/blog">
+        <Link className="my-auto" href="/blog">
           <ArrowBackIosNewRoundedIcon sx={{ fontSize: 50 }} />
-        </a>
+        </Link>
 
         <h1 className="my-auto col-span-4">{post.title}</h1>
 
-        {/* <BrutalInput placeholder='Search' className=' text-black' /> */}
       </div>
       <div className="relative z-0 mx-auto aspect-video max-w-screen-2xl overflow-hidden rounded-xl mb-10">
         {imageProps && (

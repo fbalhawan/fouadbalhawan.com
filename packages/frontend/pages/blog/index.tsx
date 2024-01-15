@@ -8,6 +8,7 @@ import Head from 'next/head';
 import moment from 'moment';
 import heroImage from '../../public/images/blog-hero.png';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 // import BrutalInput from 'packages/frontend/app/components/brutal-input';
 
 type Asset = {
@@ -77,9 +78,9 @@ export default function Blog({
       <div className="mx-auto mb-20">
         <div className="container mx-auto">
           <div className="grid grid-cols-10 gap-x-16 my-10">
-            <a className="my-auto" href="/">
+            <Link className="my-auto" href="/">
               <ArrowBackIosNewRoundedIcon sx={{ fontSize: 50 }} />
-            </a>
+            </Link>
 
             <h1 className="my-auto">Blog</h1>
 
@@ -94,6 +95,7 @@ export default function Blog({
             {posts.map((post, index) => {
               return (
                 <BrutalDiv
+                key={index}
                   hoverable={true}
                   onClick={() => {
                     try {

@@ -8,7 +8,7 @@
     "frontend:watch": "nx run frontend:build && nx run frontend:serve:watch",
     "sanity:serve": "npm run sanity:build && nx run sanity:serve",
     "sanity:build":"nx run sanity:build",
-    
+
     "build": "nx run-many --target=build --nx-ignore-cycles",
     "serve": "nx run-many --target=serve --nx-ignore-cycles"
   },

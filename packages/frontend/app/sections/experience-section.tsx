@@ -1,6 +1,5 @@
 import DevIcon from "../components/dev-icon";
-import experiences from '../components/contents/experience.json';
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 
 interface WrapperProps {
     reverse?: boolean;

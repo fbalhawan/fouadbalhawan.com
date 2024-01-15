@@ -5,10 +5,11 @@
   "projectType": "application",
   "targets": {
     "build": {
-      "command": "sanity build",
+      "executor": "nx:run-commands",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
+        "command": "sanity build dist/packages/sanity -y",
         "outputPath": "dist/packages/sanity"
       },
       "configurations": {
@@ -19,12 +20,10 @@
       }
     },
     "serve": {
-      "command": "sanity start",
+      "executor": "nx:run-commands",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "sanity build",
-        "dev": true,
-        "port": 1234
+        "command": "sanity start dist/packages/sanity -y"
       },
       "configurations": {
         "development": {
@@ -41,7 +40,7 @@
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["packages/frontend/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["packages/sanity/**/*.{ts,tsx,js,jsx}"]
       }
     }
   },

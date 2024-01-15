@@ -1,6 +1,7 @@
 'use client';
 import { useIntl } from 'react-intl';
 import BrutalBtn from './brutal-btn';
+import Link from 'next/link';
 
 export default function Footer() {
   const RESUME_URL = process.env.NEXT_PUBLIC_RESUME_URL;
@@ -17,13 +18,13 @@ export default function Footer() {
         className={`inline-block text-center col-span-4 lg:col-span-1 mt-20 lg:mt-0`}
       >
         <h3>{intl.formatMessage({ id: 'find_me' })}</h3>
-        <a href="https://github.com/fbalhawan" target="_blank">
+        <Link href="https://github.com/fbalhawan" target="_blank">
           <i className="devicon-github-original text-6xl"></i>
-        </a>
+        </Link>
 
-        <a href="https://www.linkedin.com/in/fuadb/" target="_blank">
+        <Link href="https://www.linkedin.com/in/fuadb/" target="_blank">
           <i className="devicon-linkedin-plain text-6xl"></i>
-        </a>
+        </Link>
       </div>
     </div>
   );

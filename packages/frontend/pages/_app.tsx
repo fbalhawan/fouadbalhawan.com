@@ -23,13 +23,12 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <IntlProvider locale={shortLocale} messages={messages} onError={()=>null}>
       <Head>
-        <Link rel="preconnect" href="https://fonts.googleapis.com" />
-        <Link rel="preconnect" href="https://fonts.gstatic.com" />
-        <Link
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
           href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,500;0,700;1,300;1,700&display=swap"
           rel="stylesheet"
         />
-        <Link rel="stylesheet" href="/icons/devicon-master/devicon.min.css" />
       </Head>
       <Script src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TAG}`} />
       <Script id="google-analytics">

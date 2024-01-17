@@ -64,7 +64,10 @@ export default function BlogPost({
           <ArrowBackIosNewRoundedIcon sx={{ fontSize: 50 }} />
         </Link>
 
-        <h1 className="my-auto col-span-4">{post.title}</h1>
+        <div className="my-auto col-span-6">
+          <h1>{post.title}</h1>
+          <span>{new Date(post.publishedAt).toDateString()}</span>
+        </div>
 
       </div>
       <div className="relative z-0 mx-auto aspect-video max-w-screen-2xl overflow-hidden rounded-xl mb-10">

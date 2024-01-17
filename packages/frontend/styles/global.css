@@ -71,3 +71,45 @@ body {
 .main-wrapper {
   /* padding: 2rem; */
 }
+
+.blog-post {
+  padding: 0 2rem;
+}
+
+.blog-post h2 {
+  margin-top: 1rem;
+}
+
+.blog-post p {
+  font-size: larger;
+}
+
+.blog-post ol {
+  padding-left: 1rem;
+  line-height: 2rem;
+  list-style: decimal;
+  font-size: larger;
+}
+
+.blog-post ol li{
+  margin-bottom: 2rem;
+}
+
+.blog-post img {
+  margin:0 auto;
+  max-width: 60%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.75rem;
+}
+
+.blog-post a {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 600px) {
+  .blog-post img {
+      max-width: 100%;
+  }
+}

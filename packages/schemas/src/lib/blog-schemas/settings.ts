@@ -158,6 +158,15 @@ export default defineType({
     }),
 
     defineField({
+      title: "SEO Keywords",
+      name: "keywords",
+      fieldset: "metadata",
+      type: "text",
+      rows: 5,
+      description: "Enter SEO keywords, comma separated"
+    }),
+
+    defineField({
       name: "openGraphImage",
       type: "image",
       title: "Open Graph Image",

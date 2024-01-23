@@ -1,4 +1,6 @@
-const category = {
+import { Rule } from "@sanity/types";
+
+export default {
   name: "category",
   title: "Category",
   type: "document",
@@ -16,7 +18,7 @@ const category = {
         source: "title",
         maxLength: 96
       },
-      validation: Rule => Rule.required()
+      validation: (Rule: Rule) => Rule.required()
     },
     {
       name: "color",
@@ -39,5 +41,3 @@ const category = {
     }
   ]
 };
-
-export default category;

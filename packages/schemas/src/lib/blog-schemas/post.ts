@@ -1,3 +1,5 @@
+import { Rule } from "@sanity/types";
+
 const post = {
   name: "post",
   title: "Post",
@@ -27,7 +29,7 @@ const post = {
         "The excerpt is used in blog feeds, and also for search results",
       type: "text",
       rows: 3,
-      validation: Rule => Rule.max(200)
+      validation: (Rule: Rule) => Rule.max(200)
     },
     {
       name: "author",
@@ -40,13 +42,12 @@ const post = {
       title: "Main image",
       type: "image",
       fields: [
-        // {
-        //   name: "caption",
-        //   type: "string",
-        //   title: "Image caption",
-        //   description: "Appears below image.",
-
-        // },
+        {
+          name: "caption",
+          type: "string",
+          title: "Image caption",
+          description: "Appears below image.",
+        },
         {
           name: "alt",
           type: "string",
@@ -87,7 +88,7 @@ const post = {
       author: "author.name",
       media: "mainImage"
     },
-    prepare(selection) {
+    prepare(selection: any) {
       const { author } = selection;
       return Object.assign({}, selection, {
         subtitle: author && `by ${author}`

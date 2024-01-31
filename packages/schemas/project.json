@@ -1,17 +1,22 @@
 {
-  "name": "@fb/types",
+  "name": "@fouadbalhawan.com/schemas",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/schemas/src",
+  "sourceRoot": "packages/schemas",
   "projectType": "library",
   "targets": {
     "build": {
       "executor": "@nx/js:tsc",
       "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/packages/schemas",
         "main": "packages/schemas/src/index.ts",
         "tsConfig": "packages/schemas/tsconfig.lib.json",
         "assets": ["packages/schemas/*.md"]
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
       }
     },
     "lint": {

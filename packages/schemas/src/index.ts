@@ -1,1 +1,1 @@
-// export * from './lib/blog-schemas/schemas';
+export * from './lib/blog-types';

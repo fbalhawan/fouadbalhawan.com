@@ -6,12 +6,14 @@
     "frontend:serve": "npm run frontend:build && nx run frontend:serve",
     "frontend:build": "nx run frontend:build --verbose",
     "frontend:watch": "nx run frontend:build && nx run frontend:serve:watch",
-    "sanity:serve": "nx run sanity:serve",
-    "sanity:build": "nx run sanity:build",
+    "sanity:serve": "nx run @fouadbalhawan.com/sanity:serve",
+    "sanity:build": "nx run @fouadbalhawan.com/sanity:build",
+    "schemas:build": "nx run @fouadbalhawan.com/schemas:build",
     "build": "nx run-many --target=build --nx-ignore-cycles",
     "serve": "nx run-many --target=serve --nx-ignore-cycles"
   },
   "private": true,
+  "packageManager": "pnpm@8.7.6",
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
@@ -42,7 +44,8 @@
     "sanity": "^3.15.1",
     "sanity-plugin-asset-source-unsplash": "^1.1.0",
     "styled-components": "^6.0.5",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "@fouadbalhawan.com/schemas": "./packages/schemas/"
   },
   "peerDependencies": {
     "react": "18.2.0",

@@ -1,5 +1,5 @@
 {
-  "name": "sanity",
+  "name": "@fouadbalhawan.com/sanity",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/sanity",
   "projectType": "application",

@@ -9,47 +9,8 @@ import moment from 'moment';
 import heroImage from '../../public/images/blog-hero.png';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { Post } from '@fouadbalhawan.com/schemas';
 // import BrutalInput from 'packages/frontend/app/components/brutal-input';
-
-type Asset = {
-  _ref: string;
-  _type: string;
-};
-
-type Upload = {
-  previewImage: string;
-};
-
-type Image = {
-  asset: Asset;
-  _type: string;
-  _upload: Upload;
-};
-
-type Slug = {
-  current: string;
-  _type: string;
-};
-
-type Author = {
-  _id: string;
-  name: string;
-  slug: Slug;
-  image: Image;
-};
-
-type Post = {
-  _id: string;
-  author: Author;
-  _createdAt: string;
-  title: string;
-  slug: Slug;
-  mainImage: Image;
-  featured: any;
-  categories: any;
-  excerpt: any;
-  publishedAt: string;
-};
 
 export async function getServerSideProps() {
   const posts: Array<Post> = await getAllPosts();

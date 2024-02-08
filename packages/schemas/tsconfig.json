@@ -3,12 +3,15 @@
   "compilerOptions": {
     "module": "commonjs",
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
+    "allowJs": true,
+    "checkJs": false,
+    "strict": false,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "types": ["sanity", "node", "react"]
+    "types": ["sanity", "node", "react"],
+    "jsx": "preserve"
   },
   "files": [],
   "include": [],

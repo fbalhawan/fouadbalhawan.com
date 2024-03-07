@@ -1,15 +1,8 @@
 import DevIcon from "../components/dev-icon";
+import Experience from "types/Experience";
 import Image from "next/image";
 
-interface WrapperProps {
-    reverse?: boolean;
-    company: string;
-    title: string;
-    body: any;
-    imageSrc: string;
-    skills?: Array<string>;
-}
-export default function ExperienceSection(props: WrapperProps) {
+export default function ExperienceSection(props: Experience) {
     return (
         <div className={`grid grid-cols-1 lg:grid-cols-2`}>
             <div className={`order-first bg-white w-auto relative flex ${props.reverse && 'lg:order-last'}`}>
@@ -27,7 +20,7 @@ export default function ExperienceSection(props: WrapperProps) {
                 </div>
             </div>
 
-            <div className={`${props.reverse && 'sm:order-first'}`}>
+            <div className={`${props.reverse && 'sm:order-first'}`} style={{backgroundColor: props.bgColor, padding: props.padding}} >
                 <Image src={props.imageSrc}
                     width={500}
                     height={500}
@@ -37,10 +30,9 @@ export default function ExperienceSection(props: WrapperProps) {
                     style={{
                         width: '100%',
                         objectFit: 'cover',
-                        height: '100%'
-
+                        height: '100%',
                     }}
-                    alt="Car" />
+                    alt={props.alt ?? "default"} />
             </div>
         </div>
     )

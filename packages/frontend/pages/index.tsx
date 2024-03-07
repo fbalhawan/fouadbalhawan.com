@@ -30,7 +30,7 @@ export default function Index({
         <meta name="description" content={settings.description}></meta>
         <meta name="keywords" content={settings.keywords}></meta>
       </Head>
-      
+
       <div className="mx-auto">
         <div className="flex flex-row-reverse pt-5 max-w-screen-xl mx-auto">
           {/* <a href='/blog'>Blog</a> */}
@@ -60,21 +60,15 @@ export default function Index({
 
         {Experiences()?.map((experience, i) => {
           {
+            if(i%2){
+              experience.reverse = true;
+            }
+            else{
+              experience.reverse = false;
+            }
             return (
               <ExperienceSection
-                title={experience.title}
-                key={`experience_${i}`}
-                company={experience.company}
-                body={
-                  <ul className={`list-disc space-y-8`}>
-                    {experience.body.map((bp, i) => {
-                      return <li key={`bp_${i}`}>{bp}</li>;
-                    })}
-                  </ul>
-                }
-                imageSrc={experience.imageSrc}
-                reverse={i % 2 ? true : false}
-                skills={experience.skills}
+                {...experience}
               />
             );
           }

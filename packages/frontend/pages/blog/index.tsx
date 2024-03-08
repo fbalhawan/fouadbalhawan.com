@@ -52,7 +52,7 @@ export default function Blog({
           <Image src={heroImage} alt="Hero" className="w-full object-cover" />
         </div>
         <div className="container mx-auto">
-          <div className="grid grid-cols-3 gap-x-16 gap-y-2">
+          <div className="grid grid-cols-3 gap-x-16 gap-y-2 m-4">
             {posts.map((post, index) => {
               return (
                 <BrutalDiv

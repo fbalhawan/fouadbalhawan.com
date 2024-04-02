@@ -8,7 +8,7 @@ export default function FirstSection() {
     <div
       className={`flex flex-wrap justify-center max-w-screen-xl mx-auto lg:justify-start my-10`}
     >
-      <div className="mt-6 relative basis-3/4 order-last lg:order-first">
+      <div className="mt-6 relative sm:basis-1/2 basis-3/4 order-last lg:order-first">
 
         <h3 className="">
           {intl.formatMessage({ id: 'intro' })}

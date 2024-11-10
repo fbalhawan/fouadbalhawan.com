@@ -14,7 +14,7 @@ export async function getServerSideProps(props: any) {
   const settings: any = await getSettings();
   const experiences: Experience[] = await getExperiences(3);
   const sortedExperiences: Experience[] = experiences.sort((a, b) => {
-    return b.index - a.index;
+    return a.index - b.index;
   });
 
   return {

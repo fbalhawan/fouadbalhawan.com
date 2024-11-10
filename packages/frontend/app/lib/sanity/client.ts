@@ -13,7 +13,8 @@ import {
   catpathquery,
   catquery,
   getAll,
-  searchquery
+  searchquery,
+  experienceQuery
 } from "./groq";
 import { createClient } from "next-sanity";
 
@@ -33,17 +34,17 @@ export const client = projectId
 export const fetcher = async ([query, params]: string[]) => {
   return client ? client.fetch(query, params) : [];
 };
-
-(async () => {
-  if (client) {
-    const data = await client.fetch(getAll);
-    if (!data || !data.length) {
-      console.error(
-        "Sanity returns empty array. Are you sure the dataset is public?"
-      );
-    }
-  }
-})();
+// TODO: Check why this function was here, it was breaking when executing.
+// (async () => {
+//   if (client) {
+//     const data = await client.fetch(getAll);
+//     if (!data || !data.length) {
+//       console.error(
+//         "Sanity returns empty array. Are you sure the dataset is public?"
+//       );
+//     }
+//   }
+// })();
 
 export async function getAllPosts() {
   if (client) {
@@ -130,4 +131,11 @@ export async function getPaginatedPosts(limit: number) {
     );
   }
   return {};
+}
+
+export async function getExperiences(limit: number) {
+  if(client) {
+    return (await client.fetch(experienceQuery, {pageIndex: 0, limit})) || [];
+  }
+  return [];
 }

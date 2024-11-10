@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "frontend:serve": "npm run frontend:build && nx run frontend:serve",
+    "frontend:serve": "npm run frontend:build --skip-nx-cache && nx run frontend:serve --skip-nx-cache",
     "frontend:build": "nx run frontend:build --verbose",
     "frontend:watch": "nx run frontend:build && nx run frontend:serve:watch",
     "sanity:serve": "nx run @fouadbalhawan.com/sanity:serve",

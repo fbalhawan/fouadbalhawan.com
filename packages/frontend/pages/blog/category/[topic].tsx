@@ -1,23 +1,23 @@
 import { InferGetServerSidePropsType } from 'next';
 import {
   getAllCategories,
-  getAllPosts,
+  getPostsByCategory,
   getSettings,
-} from '../../app/lib/sanity/client';
-import { urlForImage } from '../../app/lib/sanity/image';
-import BrutalDiv from '../../app/components/brutal-div';
+} from '../../../app/lib/sanity/client';
+import { urlForImage } from '../../../app/lib/sanity/image';
+import BrutalDiv from '../../../app/components/brutal-div';
 import ArrowBackIosNewRoundedIcon from '@mui/icons-material/ArrowBackIosNewRounded';
 import Image from 'next/image';
 import Head from 'next/head';
 import moment from 'moment';
-import heroImage from '../../public/images/blog-hero.png';
+import heroImage from '../../../public/images/blog-hero.png';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Post } from '@fouadbalhawan.com/schemas';
 // import BrutalInput from 'packages/frontend/app/components/brutal-input';
 
-export async function getServerSideProps() {
-  const posts: Array<Post> = await getAllPosts();
+export async function getServerSideProps({ params }: any) {
+  const posts: Array<Post> = await getPostsByCategory(params.topic);
   const topics: 
     {
       category: string;

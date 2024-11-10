@@ -131,6 +131,10 @@ export const allauthorsquery = groq`
 }
 `;
 
+export const experienceQuery = groq`
+*[_type == "experience"][$pageIndex...$limit]
+`;
+
 // get everything from sanity
 // to test connection
 export const getAll = groq`*[]`;

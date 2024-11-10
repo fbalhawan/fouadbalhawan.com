@@ -9,6 +9,7 @@ const styles = {
 };
 
 interface WrapperProps {
+    key: number;
     icon: string;
     label: string;
     className?: string;
@@ -29,7 +30,7 @@ export default function DevIcon(props: WrapperProps) {
     const color = colors[Math.floor(Math.random() * colors.length)];
 
     return (
-        <BrutalDiv className={` bg-green bg-sk h-auto flex-wrap overflow-auto inline-flex pt-2 pb-1 ${color}`}>
+        <BrutalDiv key={props.key} className={` bg-green bg-sk h-auto flex-wrap overflow-auto inline-flex pt-2 pb-1 ${color}`}>
             <span className="text-md leading-none">{props.label}</span>
             <i className={`devicon-${iconName}-plain colored text-xl leading-none ${props.className ?? ''}`} />
         </BrutalDiv>

@@ -6,20 +6,28 @@ import { useIntl } from 'react-intl';
 import Footer from '../app/components/footer';
 import BrutalBtn from 'components/brutal-btn';
 import { InferGetServerSidePropsType } from 'next';
-import { getSettings } from 'lib/sanity/client';
+import { getExperiences, getSettings } from 'lib/sanity/client';
 import Head from 'next/head';
+import {  Experience } from '@fouadbalhawan.com/schemas';
 
-export async function getServerSideProps() {
+export async function getServerSideProps(props: any) {
   const settings: any = await getSettings();
+  const experiences: Experience[] = await getExperiences(3);
+  const sortedExperiences: Experience[] = experiences.sort((a, b) => {
+    return b.index - a.index;
+  });
+
   return {
     props: {
       settings: settings[0],
+      experiences: sortedExperiences
     },
   };
 }
 
 export default function Index({
   settings,
+  experiences
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const intl = useIntl();
 
@@ -58,7 +66,7 @@ export default function Index({
           </div>
         </div>
 
-        {Experiences()?.map((experience, i) => {
+        {experiences?.map((experience, i) => {
           {
             if(i%2){
               experience.reverse = true;

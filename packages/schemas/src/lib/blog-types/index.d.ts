@@ -38,11 +38,27 @@ type Post = {
   publishedAt: string;
 };
 
+type Experience = {
+  _id: string;
+  title: string;
+  index: number;
+  slug: Slug;
+  company: string;
+  body: any;
+  imageSrc: Image;
+  skills: string[];
+  reverse?: boolean;
+  bgColor?: string;
+  padding?: string;
+  link?: string;
+  alt?: string
+}
 export type {
   Asset,
   Upload,
   Image,
   Slug,
   Author,
-  Post
+  Post,
+  Experience
 }

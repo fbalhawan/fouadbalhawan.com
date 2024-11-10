@@ -1,4 +1,3 @@
-import Experiences from '../app/components/contents/experiences';
 import FirstSection from '../app/sections/first-section';
 import SkillsSection from '../app/sections/skills-section';
 import ExperienceSection from '../app/sections/experience-section';

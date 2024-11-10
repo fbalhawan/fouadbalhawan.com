@@ -1,13 +1,13 @@
 import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
 import { visionTool } from "@sanity/vision";
-import { schemaTypes } from "./app/lib/sanity/schemas";
+import { schemaTypes } from "@fouadbalhawan.com/schemas";
 import {
   projectId,
   dataset,
   previewSecretId
 } from "./app/lib/sanity/config";
-import settings from "./app/lib/sanity/schemas/settings";
+import settings from "@fouadbalhawan.com/schemas/src/lib/blog-schemas/settings";
 import {
   pageStructure,
   // singletonPlugin

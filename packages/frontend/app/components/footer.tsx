@@ -7,17 +7,26 @@ export default function Footer() {
   const RESUME_URL = process.env.NEXT_PUBLIC_RESUME_URL;
   const intl = useIntl();
   return (
-    <div className=" grid grid-cols-4 justify-center  my-10 sm:mt-20">
-      <div className="my-0 inline-block text-center lg:col-span-3 col-span-4">
-        <h3>{intl.formatMessage({ id: 'and_many_more' })}</h3>
+    <div className=" grid sm:grid-cols-3 justify-center my-10 sm:mt-20">
+
+      <div className="my-0 inline-block text-center">
+        <h3>Contact</h3>
+        <Link href="mailto:hello@fouadbn.com">
+          {process.env.NEXT_PUBLIC_EMAIL}
+        </Link>
+      </div>
+
+      <div className="my-0 mt-5 lg:mt-0 inline-block text-center">
+        <h3>Resume</h3>
         <BrutalBtn href={RESUME_URL} target="blank">
-          {intl.formatMessage({ id: 'download_resume' })}
+          Download My Resume
         </BrutalBtn>
       </div>
       <div
-        className={`inline-block text-center col-span-4 lg:col-span-1 mt-20 lg:mt-0`}
+        className={`inline-block text-center mt-5 lg:mt-0`}
       >
-        <h3>{intl.formatMessage({ id: 'find_me' })}</h3>
+        
+        <h3>Social</h3>
         <Link href="https://github.com/fbalhawan" target="_blank">
           <i className="devicon-github-original text-6xl"></i>
         </Link>

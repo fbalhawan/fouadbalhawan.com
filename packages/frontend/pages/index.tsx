@@ -1,4 +1,3 @@
-import Experiences from '../app/components/contents/experiences';
 import FirstSection from '../app/sections/first-section';
 import SkillsSection from '../app/sections/skills-section';
 import ExperienceSection from '../app/sections/experience-section';
@@ -14,7 +13,7 @@ export async function getServerSideProps(props: any) {
   const settings: any = await getSettings();
   const experiences: Experience[] = await getExperiences(3);
   const sortedExperiences: Experience[] = experiences.sort((a, b) => {
-    return b.index - a.index;
+    return a.index - b.index;
   });
 
   return {

@@ -29,6 +29,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,500;0,700;1,300;1,700&display=swap"
           rel="stylesheet"
         />
+
       </Head>
       <Script src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TAG}`} />
       <Script id="google-analytics">
@@ -40,6 +41,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         `}
       </Script>
       <Layout>
+      {/* <Script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"/> */}
         <Component {...pageProps} />
       </Layout>
     </IntlProvider>

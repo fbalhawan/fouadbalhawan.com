@@ -32,11 +32,11 @@ export default function BrutalDiv(props: WrapperProps) {
       style={props.style}
       className={`
                   m-1 p-4
-                  shadow-[3px_3px_0px_0px_rgba(0,0,0)]
-                  border border-black rounded-3xl
+                  shadow-[0px_6px_0px_0px_rgba(0,0,0)]
+                  border-2 border-black rounded-xl
                   ${
                     props.hoverable
-                      ? 'hover:shadow-[6px_6px_0px_0px_rgba(0,0,0)] transition ease-in-out hover:-translate-x-0.5 hover:-translate-y-0.5 hover:scale-100 duration-200 hover cursor-pointer'
+                      ? 'hover:shadow-[0px_8px_0px_0px_rgba(0,0,0)] transition ease-in-out hover:-translate-x-0.5 hover:-translate-y-0.5 hover:scale-100 duration-200 hover cursor-pointer'
                       : null
                   }
                   ${props.imageSrc && ' pt-0 pr-0 pl-0'}

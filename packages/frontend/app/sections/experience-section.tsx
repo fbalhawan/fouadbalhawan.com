@@ -40,7 +40,7 @@ export default function ExperienceSection(props: Experience) {
       };
     return (
         <div className={`grid grid-cols-1 lg:grid-cols-2`}>
-            <div className={`order-first bg-white w-auto relative flex ${props.reverse && 'lg:order-last'}`}>
+            <div className={`order-first bg-green-50 w-auto relative flex rounded-xl ${props.reverse && 'lg:order-last'}`}>
                 <div className={`m-auto max-w-3xl p-5`}>
                     <h2 className="mt-10">{props.title}</h2>
                     <h3 className="mb-10">{props.company}</h3>
@@ -57,14 +57,14 @@ export default function ExperienceSection(props: Experience) {
                 </div>
             </div>
             
-            <div className={`${props.reverse && 'sm:order-first'}`} style={{backgroundColor: props.bgColor, padding: `${props.padding}px`}} >
+            <div className={`${props.reverse && 'sm:order-first'} rounded-xl`} style={{backgroundColor: props.bgColor, padding: `${props.padding}px`}} >
                 {urlForImage(props.imageSrc) && 
                     <Image src={ urlForImage(props.imageSrc)?.src as string }
                     width={500}
                     height={500}
                     loading="lazy"
                     quality={40}
-                    className=''
+                    className='rounded-xl'
                     style={{
                         width: '100%',
                         objectFit: 'cover',

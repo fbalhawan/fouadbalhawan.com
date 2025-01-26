@@ -6,7 +6,6 @@ export default function SkillsSection() {
     const codingSkills = [
         'Node.js',
         'TypeScript',
-        'Express',
         'MySql',
         'PostgreSQL',
         'Nest.js',
@@ -16,7 +15,6 @@ export default function SkillsSection() {
         'Next.js',
         'Tailwind css',
         'Solidity',
-        'npm',
         'yarn'
     ];
 
@@ -27,7 +25,6 @@ export default function SkillsSection() {
         'Docker',
         'GitHub',
         'GitLab',
-        'CI/CD',
         'Linux',
         'Bash'
     ];
@@ -35,7 +32,6 @@ export default function SkillsSection() {
         'JIRA',
         'Confluence',
         'Figma',
-        'Scrum',
         'Slack',
         'Trello'
     ];
@@ -43,11 +39,11 @@ export default function SkillsSection() {
     return (
 
 
-        <div className={`grid grid-cols-1 gap-y-10 lg:grid-cols-3 sm:gap-x-16 pr-5 pl-5`}>
+        <div className={`grid grid-cols-1 gap-y-10 lg:grid-cols-3 sm:gap-x-16 pr-5 pl-5 text-center`}>
             <BrutalDiv title={intl.formatMessage({id: 'coding'})} icon='🕸' className='  bg-teal-50'>
                 {
                     codingSkills.map((val, i) => {
-                        return <DevIcon key={i} label={val} icon={val} />
+                        return <DevIcon key={`coding${i}`} label={val} icon={val} />
                     })
                 }
             </BrutalDiv>
@@ -55,7 +51,7 @@ export default function SkillsSection() {
             <BrutalDiv icon='⚙️' title={intl.formatMessage({id: 'devops'})} className='bg-purple-100'>
                 {
                     devOpsSkills.map((val, i) => {
-                        return <DevIcon key={i} label={val} icon={val} />
+                        return <DevIcon key={`devops${i}`} label={val} icon={val} />
                     })
                 }
             </BrutalDiv>
@@ -63,7 +59,7 @@ export default function SkillsSection() {
             <BrutalDiv icon='👨🏻‍💻' title={intl.formatMessage({id: 'management'})} className=' bg-lime-100'>
                 {
                     managementSkills.map((val, i) => {
-                        return <DevIcon key={i} label={val} icon={val} />
+                        return <DevIcon key={`mgmt${i}`} label={val} icon={val} />
                     })
                 }
             </BrutalDiv>

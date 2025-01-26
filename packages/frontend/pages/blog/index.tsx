@@ -84,7 +84,6 @@ export default function Blog({
                 return (
                   <BrutalDiv
                     key={index}
-                    hoverable={true}
                     onClick={() => {
                       try {
                         router.push(`blog/${post?.slug?.current}`);

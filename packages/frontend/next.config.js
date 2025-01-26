@@ -28,6 +28,9 @@ const nextConfig = {
       },
     ],
   },
+  compiler:{
+    styledComponents: true
+  }
 };
 
 const plugins = [

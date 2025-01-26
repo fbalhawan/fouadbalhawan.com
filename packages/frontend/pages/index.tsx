@@ -55,16 +55,19 @@ export default function Index({
           </div>
         </div>
 
-        <SkillsSection />
+        <div className='container mx-auto'>
+          <SkillsSection />
+        </div>
 
         <div className="flex flex-col flex-wrap justify-center  my-10 sm:mt-20">
           <div className="relative">
             <h1 className=" text-center">
-              {intl.formatMessage({ id: 'my_roles' })}
+              {"My Roles"}
             </h1>
           </div>
         </div>
-
+        
+        <div className='container mx-auto shadow-[0px_6px_0px_0px_rgba(0,0,0)] bg-green-50 border-2 border-black rounded-xl'>
         {experiences?.map((experience, i) => {
           {
             if(i%2){
@@ -75,11 +78,13 @@ export default function Index({
             }
             return (
               <ExperienceSection
+                key={`experiences-${i}`}
                 {...experience}
               />
             );
           }
         })}
+        </div>
         {/* Footer section */}
         <Footer />
       </div>

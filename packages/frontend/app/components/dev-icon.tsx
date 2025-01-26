@@ -1,15 +1,11 @@
 'use client';
-import { Component, PropsWithChildren, ReactNode } from "react";
 import { cleanString } from "../utils";
 import BrutalDiv from "./brutal-div";
-import TailwindColor from "../utils/TailwindColor";
+import {Popover, Button, PopoverTrigger, PopoverContent} from "@nextui-org/react";
 
-
-const styles = {
-};
+import RoundedBrutalDiv from "./rounded-brutal-div";
 
 interface WrapperProps {
-    key: number;
     icon: string;
     label: string;
     className?: string;
@@ -30,9 +26,23 @@ export default function DevIcon(props: WrapperProps) {
     const color = colors[Math.floor(Math.random() * colors.length)];
 
     return (
-        <BrutalDiv key={props.key} className={` bg-green bg-sk h-auto flex-wrap overflow-auto inline-flex pt-2 pb-1 ${color}`}>
-            <span className="text-md leading-none">{props.label}</span>
-            <i className={`devicon-${iconName}-plain colored text-xl leading-none ${props.className ?? ''}`} />
-        </BrutalDiv>
+        
+    <Popover classNames={{ 
+        base: `p-1 border-2 shadow-[0px_2px_0px_0px_rgba(0,0,0)] border-black ${color}`, arrow: 'bg-green visible border-1px'
+        
+     }}>
+        <PopoverTrigger>
+            <Button className="rounded-full" >
+                <RoundedBrutalDiv hoverable={true} className={` bg-green bg-sk flex-wrap overflow-auto m-2 p-2 mt-6 ${color}`}>
+                    <i className={`devicon-${iconName}-plain colored text-4xl leading-none ${props.className ?? ''}`} />
+                </RoundedBrutalDiv>
+            </Button>
+        </PopoverTrigger>
+        <PopoverContent>
+                {props.label}
+        </PopoverContent>
+
+    </Popover>
+
     );
 }

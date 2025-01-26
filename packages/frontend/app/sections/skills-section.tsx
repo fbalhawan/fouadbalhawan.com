@@ -43,7 +43,7 @@ export default function SkillsSection() {
             <BrutalDiv title={intl.formatMessage({id: 'coding'})} icon='🕸' className='  bg-teal-50'>
                 {
                     codingSkills.map((val, i) => {
-                        return <DevIcon key={i} label={val} icon={val} />
+                        return <DevIcon key={`coding${i}`} label={val} icon={val} />
                     })
                 }
             </BrutalDiv>
@@ -51,7 +51,7 @@ export default function SkillsSection() {
             <BrutalDiv icon='⚙️' title={intl.formatMessage({id: 'devops'})} className='bg-purple-100'>
                 {
                     devOpsSkills.map((val, i) => {
-                        return <DevIcon key={i} label={val} icon={val} />
+                        return <DevIcon key={`devops${i}`} label={val} icon={val} />
                     })
                 }
             </BrutalDiv>
@@ -59,7 +59,7 @@ export default function SkillsSection() {
             <BrutalDiv icon='👨🏻‍💻' title={intl.formatMessage({id: 'management'})} className=' bg-lime-100'>
                 {
                     managementSkills.map((val, i) => {
-                        return <DevIcon key={i} label={val} icon={val} />
+                        return <DevIcon key={`mgmt${i}`} label={val} icon={val} />
                     })
                 }
             </BrutalDiv>

@@ -78,6 +78,7 @@ export default function Index({
             }
             return (
               <ExperienceSection
+                key={`experiences-${i}`}
                 {...experience}
               />
             );

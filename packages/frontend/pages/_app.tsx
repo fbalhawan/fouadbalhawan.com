@@ -1,15 +1,19 @@
 import type { AppProps } from 'next/app';
 import Layout from '../app/components/layout';
-import Link from 'next/link';
 import Head from 'next/head';
 import Script from 'next/script';
 import English from '../app/content/locales/en.json';
 import { useRouter } from 'next/router';
-import { useMemo } from 'react';
-import { IntlProvider } from 'react-intl'
+import { useMemo, useEffect } from 'react';
+import { IntlProvider } from 'react-intl';
+
 export default function MyApp({ Component, pageProps }: AppProps) {
   const { locale } = useRouter();
   const [shortLocale] = locale ? locale.split('-') : ['en'];
+  
+  // useEffect(() => {
+    
+  // }, []);
 
   const messages = useMemo(() => {
     switch (shortLocale) {
@@ -41,7 +45,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         `}
       </Script>
       <Layout>
-      {/* <Script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"/> */}
         <Component {...pageProps} />
       </Layout>
     </IntlProvider>

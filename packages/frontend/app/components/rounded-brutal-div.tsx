@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { CSSProperties, ReactNode} from 'react';
+import { CSSProperties, ReactNode } from "react";
 
 interface CommonProps {
   children: ReactNode;
@@ -31,10 +31,10 @@ export default function RoundedBrutalDiv(props: WrapperProps) {
                   border-2 shadow-[0px_2px_0px_0px_rgba(0,0,0)] border-black rounded-full m-1
                   ${
                     props.hoverable
-                      ? 'hover:shadow-[0px_4px_0px_0px_rgba(0,0,0)] transition ease-in-out hover:-translate-x-0.5 hover:-translate-y-0.5 hover:scale-100 duration-0 hover cursor-pointer'
+                      ? "hover:shadow-[0px_4px_0px_0px_rgba(0,0,0)] transition ease-in-out hover:-translate-x-0.5 hover:-translate-y-0.5 hover:scale-100 duration-0 hover cursor-pointer"
                       : null
                   }
-                  ${props.className ?? ''}`}
+                  ${props.className ?? ""}`}
     >
       {props.children}
     </div>

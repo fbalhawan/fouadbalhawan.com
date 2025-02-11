@@ -2,11 +2,7 @@ import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
 import { visionTool } from "@sanity/vision";
 import { schemaTypes } from "@fouadbalhawan.com/schemas";
-import {
-  projectId,
-  dataset,
-  previewSecretId
-} from "./app/lib/sanity/config";
+import { projectId, dataset, previewSecretId } from "./app/lib/sanity/config";
 import settings from "@fouadbalhawan.com/schemas/src/lib/blog-schemas/settings";
 import {
   pageStructure,
@@ -27,7 +23,7 @@ export default defineConfig({
 
   plugins: [
     deskTool({
-      structure: pageStructure([settings])
+      structure: pageStructure([settings]),
       // `defaultDocumentNode` is responsible for adding a “Preview” tab to the document pane
       // defaultDocumentNode: previewDocumentNode({ apiVersion, previewSecretId }),
     }),
@@ -35,10 +31,10 @@ export default defineConfig({
     visionTool(),
     unsplashImageAsset(),
     table(),
-    codeInput()
+    codeInput(),
   ],
 
   schema: {
-    types: schemaTypes
-  }
+    types: schemaTypes,
+  },
 });

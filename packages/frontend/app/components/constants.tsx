@@ -1,6 +1,6 @@
 const COLORS = {
-    primary: '#44BBA4',
-    secondary: ''
-}
+  primary: "#44BBA4",
+  secondary: "",
+};
 
-export {COLORS}
+export { COLORS };

@@ -12,39 +12,39 @@ export default defineType({
       name: "metadata",
       options: {
         collapsible: true,
-        collapsed: false
-      }
+        collapsed: false,
+      },
     },
     {
       title: "Social Media",
-      name: "social"
+      name: "social",
     },
     {
       title: "Website Logo",
       name: "logos",
       options: {
         collapsible: true,
-        collapsed: false
-      }
-    }
+        collapsed: false,
+      },
+    },
   ],
   fields: [
     defineField({
       name: "title",
       type: "string",
-      title: "Site title"
+      title: "Site title",
     }),
     defineField({
       title: "URL",
       name: "url",
       type: "url",
-      description: "The main site url. Used to create canonical url"
+      description: "The main site url. Used to create canonical url",
     }),
     defineField({
       name: "copyright",
       type: "string",
       title: "Copyright Name",
-      description: "Enter company name to appear in footer after ©"
+      description: "Enter company name to appear in footer after ©",
     }),
     defineField({
       title: "Main logo",
@@ -57,9 +57,9 @@ export default defineType({
           name: "alt",
           type: "string",
           title: "Alternative text",
-          description: "Important for SEO and accessiblity."
-        }
-      ]
+          description: "Important for SEO and accessiblity.",
+        },
+      ],
     }),
 
     defineField({
@@ -74,29 +74,29 @@ export default defineType({
           name: "alt",
           type: "string",
           title: "Alternative text",
-          description: "Important for SEO and accessiblity."
-        }
-      ]
+          description: "Important for SEO and accessiblity.",
+        },
+      ],
     }),
 
     defineField({
       name: "email",
       type: "string",
       title: "Support Email",
-      validation: Rule =>
+      validation: (Rule) =>
         Rule.regex(
           /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/,
           {
             name: "email", // Error message is "Does not match email-pattern"
-            invert: false // Boolean to allow any value that does NOT match pattern
+            invert: false, // Boolean to allow any value that does NOT match pattern
           }
-        )
+        ),
     }),
 
     defineField({
       name: "phone",
       type: "string",
-      title: "Support Phone"
+      title: "Support Phone",
     }),
 
     defineField({
@@ -104,7 +104,7 @@ export default defineType({
       type: "string",
       title: "Web3Forms Access Key",
       description:
-        "Enter Access key obtained from web3forms.com. It is required to make the form work."
+        "Enter Access key obtained from web3forms.com. It is required to make the form work.",
     }),
 
     defineField({
@@ -112,7 +112,7 @@ export default defineType({
       type: "array",
       title: "Social Links",
       description: "Enter your Social Media URLs",
-      validation: Rule => Rule.unique(),
+      validation: (Rule) => Rule.unique(),
       of: [
         {
           type: "object",
@@ -127,24 +127,24 @@ export default defineType({
                   { title: "Facebook", value: "facebook" },
                   { title: "Instagram", value: "instagram" },
                   { title: "Linkedin", value: "linkedin" },
-                  { title: "Youtube", value: "youtube" }
-                ]
-              }
+                  { title: "Youtube", value: "youtube" },
+                ],
+              },
             },
             {
               type: "url",
               name: "url",
-              title: "Full Profile URL"
-            }
+              title: "Full Profile URL",
+            },
           ],
           preview: {
             select: {
               title: "media",
-              subtitle: "url"
-            }
-          }
-        }
-      ]
+              subtitle: "url",
+            },
+          },
+        },
+      ],
     }),
 
     defineField({
@@ -153,8 +153,8 @@ export default defineType({
       fieldset: "metadata",
       type: "text",
       rows: 5,
-      validation: Rule => Rule.min(20).max(200),
-      description: "Enter SEO Meta Description"
+      validation: (Rule) => Rule.min(20).max(200),
+      description: "Enter SEO Meta Description",
     }),
 
     defineField({
@@ -163,16 +163,15 @@ export default defineType({
       fieldset: "metadata",
       type: "text",
       rows: 5,
-      description: "Enter SEO keywords, comma separated"
+      description: "Enter SEO keywords, comma separated",
     }),
 
     defineField({
       name: "openGraphImage",
       type: "image",
       title: "Open Graph Image",
-      description:
-        "Image for sharing previews on Facebook, Twitter etc.",
-      fieldset: "metadata"
-    })
-  ]
+      description: "Image for sharing previews on Facebook, Twitter etc.",
+      fieldset: "metadata",
+    }),
+  ],
 });

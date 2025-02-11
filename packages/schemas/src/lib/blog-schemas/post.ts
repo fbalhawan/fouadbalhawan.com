@@ -5,13 +5,13 @@ const post = {
   title: "Post",
   type: "document",
   initialValue: () => ({
-    publishedAt: new Date().toISOString()
+    publishedAt: new Date().toISOString(),
   }),
   fields: [
     {
       name: "title",
       title: "Title",
-      type: "string"
+      type: "string",
     },
     {
       name: "slug",
@@ -19,8 +19,8 @@ const post = {
       type: "slug",
       options: {
         source: "title",
-        maxLength: 96
-      }
+        maxLength: 96,
+      },
     },
     {
       name: "excerpt",
@@ -29,13 +29,13 @@ const post = {
         "The excerpt is used in blog feeds, and also for search results",
       type: "text",
       rows: 3,
-      validation: (Rule: Rule) => Rule.max(200)
+      validation: (Rule: Rule) => Rule.max(200),
     },
     {
       name: "author",
       title: "Author",
       type: "reference",
-      to: { type: "author" }
+      to: { type: "author" },
     },
     {
       name: "mainImage",
@@ -52,49 +52,49 @@ const post = {
           name: "alt",
           type: "string",
           title: "Alternative text",
-          description: "Important for SEO and accessiblity."
-        }
+          description: "Important for SEO and accessiblity.",
+        },
       ],
       options: {
-        hotspot: true
-      }
+        hotspot: true,
+      },
     },
     {
       name: "categories",
       title: "Categories",
       type: "array",
-      of: [{ type: "reference", to: { type: "category" } }]
+      of: [{ type: "reference", to: { type: "category" } }],
     },
     {
       name: "publishedAt",
       title: "Published at",
-      type: "datetime"
+      type: "datetime",
     },
     {
       name: "featured",
       title: "Mark as Featured",
-      type: "boolean"
+      type: "boolean",
     },
     {
       name: "body",
       title: "Body",
-      type: "blockContent"
-    }
+      type: "blockContent",
+    },
   ],
 
   preview: {
     select: {
       title: "title",
       author: "author.name",
-      media: "mainImage"
+      media: "mainImage",
     },
     prepare(selection: any) {
       const { author } = selection;
       return Object.assign({}, selection, {
-        subtitle: author && `by ${author}`
+        subtitle: author && `by ${author}`,
       });
-    }
-  }
+    },
+  },
 };
 
 export default post;

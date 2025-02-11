@@ -43,10 +43,10 @@ import { type StructureResolver } from "sanity/desk";
 export const pageStructure = (
   typeDefArray: DocumentDefinition[]
 ): StructureResolver => {
-  return S => {
+  return (S) => {
     // Goes through all of the singletons that were provided and translates them into something the
     // Desktool can understand
-    const singletonItems = typeDefArray.map(typeDef => {
+    const singletonItems = typeDefArray.map((typeDef) => {
       return S.listItem()
         .title(typeDef.title || "")
         .icon(typeDef.icon)
@@ -57,17 +57,15 @@ export const pageStructure = (
             .documentId(typeDef.name)
             .views([
               // Default form view
-              S.view.form()
+              S.view.form(),
             ])
         );
     });
 
     // The default root list items (except custom ones)
     const defaultListItems = S.documentTypeListItems().filter(
-      listItem =>
-        !typeDefArray.find(
-          singleton => singleton.name === listItem.getId()
-        )
+      (listItem) =>
+        !typeDefArray.find((singleton) => singleton.name === listItem.getId())
     );
 
     return S.list()

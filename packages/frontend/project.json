@@ -61,7 +61,8 @@
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["packages/frontend/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["packages/frontend/**/*.{ts,tsx,jsx}"],
+        "fix": true
       }
     }
   },

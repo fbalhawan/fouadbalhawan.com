@@ -10,7 +10,8 @@
     "sanity:build": "nx run @fouadbalhawan.com/sanity:build",
     "schemas:build": "nx run @fouadbalhawan.com/schemas:build",
     "build": "nx run-many --target=build --nx-ignore-cycles",
-    "serve": "nx run-many --target=serve --nx-ignore-cycles"
+    "serve": "nx run-many --target=serve --nx-ignore-cycles",
+    "lint": "nx run frontend:lint --fix"
   },
   "private": true,
   "packageManager": "pnpm@8.7.6",

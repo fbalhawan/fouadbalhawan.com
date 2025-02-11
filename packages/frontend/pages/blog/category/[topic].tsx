@@ -1,28 +1,26 @@
-import { InferGetServerSidePropsType } from 'next';
+import { InferGetServerSidePropsType } from "next";
 import {
   getAllCategories,
   getPostsByCategory,
   getSettings,
-} from '../../../app/lib/sanity/client';
-import { urlForImage } from '../../../app/lib/sanity/image';
-import BrutalDiv from '../../../app/components/brutal-div';
-import ArrowBackIosNewRoundedIcon from '@mui/icons-material/ArrowBackIosNewRounded';
-import Image from 'next/image';
-import Head from 'next/head';
-import moment from 'moment';
-import heroImage from '../../../public/images/blog-hero.png';
-import { useRouter } from 'next/navigation';
-import Link from 'next/link';
-import { Post } from '@fouadbalhawan.com/schemas';
+} from "../../../app/lib/sanity/client";
+import { urlForImage } from "../../../app/lib/sanity/image";
+import BrutalDiv from "../../../app/components/brutal-div";
+import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRounded";
+import Image from "next/image";
+import Head from "next/head";
+import moment from "moment";
+import heroImage from "../../../public/images/blog-hero.png";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { Post } from "@fouadbalhawan.com/schemas";
 // import BrutalInput from 'packages/frontend/app/components/brutal-input';
 
 export async function getServerSideProps({ params }: any) {
   const posts: Array<Post> = await getPostsByCategory(params.topic);
-  const topics: 
-    {
-      category: string;
-    }[]
-   = await getAllCategories();
+  const topics: {
+    category: string;
+  }[] = await getAllCategories();
 
   const settings: any = await getSettings();
   return {
@@ -67,7 +65,7 @@ export default function Blog({
           <div className="grid grid-cols-6">
             <div className="col-span-1">
               <h2>Tags</h2>
-              <ul className='ml-4'>
+              <ul className="ml-4">
                 {topics.map((topic, index) => {
                   return (
                     <li key={index}>
@@ -105,14 +103,14 @@ export default function Blog({
                           width={25}
                           height={25}
                           alt="Profile Pic"
-                          src={urlForImage(post?.author?.image)?.src || ''}
+                          src={urlForImage(post?.author?.image)?.src || ""}
                         />
                         <span className="pl-2 pt-1">{post?.author?.name}</span>
                       </div>
 
                       <div className=" text-right">
                         <span className="text-right">
-                          {moment(post._createdAt).format('LL')}
+                          {moment(post._createdAt).format("LL")}
                         </span>
                       </div>
                     </div>

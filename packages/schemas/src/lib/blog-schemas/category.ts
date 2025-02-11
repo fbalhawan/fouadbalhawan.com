@@ -8,7 +8,7 @@ export default {
     {
       name: "title",
       title: "Title",
-      type: "string"
+      type: "string",
     },
     {
       name: "slug",
@@ -16,9 +16,9 @@ export default {
       type: "slug",
       options: {
         source: "title",
-        maxLength: 96
+        maxLength: 96,
       },
-      validation: (Rule: Rule) => Rule.required()
+      validation: (Rule: Rule) => Rule.required(),
     },
     {
       name: "color",
@@ -30,14 +30,14 @@ export default {
           { title: "Green", value: "green" },
           { title: "Blue", value: "blue" },
           { title: "Purple", value: "purple" },
-          { title: "Orange", value: "orange" }
-        ]
-      }
+          { title: "Orange", value: "orange" },
+        ],
+      },
     },
     {
       name: "description",
       title: "Description",
-      type: "text"
-    }
-  ]
+      type: "text",
+    },
+  ],
 };

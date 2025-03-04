@@ -52,14 +52,14 @@ export default defineType({
       name: "logo",
       type: "image",
       fieldset: "logos",
-      fields: [
-        {
-          name: "alt",
-          type: "string",
-          title: "Alternative text",
-          description: "Important for SEO and accessiblity.",
-        },
-      ],
+      // fields: [
+      //   {
+      //     name: "alt",
+      //     type: "string",
+      //     title: "Alternative text",
+      //     description: "Important for SEO and accessiblity.",
+      //   },
+      // ],
     }),
 
     defineField({
@@ -69,14 +69,14 @@ export default defineType({
       name: "logoalt",
       type: "image",
       fieldset: "logos",
-      fields: [
-        {
-          name: "alt",
-          type: "string",
-          title: "Alternative text",
-          description: "Important for SEO and accessiblity.",
-        },
-      ],
+      // fields: [
+      //   {
+      //     name: "alt",
+      //     type: "string",
+      //     title: "Alternative text",
+      //     description: "Important for SEO and accessiblity.",
+      //   },
+      // ],
     }),
 
     defineField({
@@ -113,38 +113,38 @@ export default defineType({
       title: "Social Links",
       description: "Enter your Social Media URLs",
       validation: (Rule) => Rule.unique(),
-      of: [
-        {
-          type: "object",
-          fields: [
-            {
-              type: "string",
-              name: "media",
-              title: "Choose Social Media",
-              options: {
-                list: [
-                  { title: "Twitter", value: "twitter" },
-                  { title: "Facebook", value: "facebook" },
-                  { title: "Instagram", value: "instagram" },
-                  { title: "Linkedin", value: "linkedin" },
-                  { title: "Youtube", value: "youtube" },
-                ],
-              },
-            },
-            {
-              type: "url",
-              name: "url",
-              title: "Full Profile URL",
-            },
-          ],
-          preview: {
-            select: {
-              title: "media",
-              subtitle: "url",
-            },
-          },
-        },
-      ],
+      // of: [
+      //   {
+      //     type: "object",
+      //     fields: [
+      //       {
+      //         type: "string",
+      //         name: "media",
+      //         title: "Choose Social Media",
+      //         options: {
+      //           list: [
+      //             { title: "Twitter", value: "twitter" },
+      //             { title: "Facebook", value: "facebook" },
+      //             { title: "Instagram", value: "instagram" },
+      //             { title: "Linkedin", value: "linkedin" },
+      //             { title: "Youtube", value: "youtube" },
+      //           ],
+      //         },
+      //       },
+      //       {
+      //         type: "url",
+      //         name: "url",
+      //         title: "Full Profile URL",
+      //       },
+      //     ],
+      //     preview: {
+      //       select: {
+      //         title: "media",
+      //         subtitle: "url",
+      //       },
+      //     },
+      //   },
+      // ],
     }),
 
     defineField({
@@ -152,7 +152,7 @@ export default defineType({
       name: "description",
       fieldset: "metadata",
       type: "text",
-      rows: 5,
+      // rows: 5,
       validation: (Rule) => Rule.min(20).max(200),
       description: "Enter SEO Meta Description",
     }),
@@ -162,7 +162,7 @@ export default defineType({
       name: "keywords",
       fieldset: "metadata",
       type: "text",
-      rows: 5,
+      // rows: 5,
       description: "Enter SEO keywords, comma separated",
     }),
 

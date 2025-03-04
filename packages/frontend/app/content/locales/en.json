@@ -1,13 +1,13 @@
 {
-  "intro": "Hi, my name is Fouad.",
-  "title": "I implement Fullstack Applications",
-  "bio": "I'm a Senior Software Engineer, with extensive experience in building highly scalable backends and user-friendly frontends",
+  "intro": "Hi, I'm Fouad.",
+  "title": "I implement Scalable Applications",
+  "bio": "With over 8 years of building backends, I can help you in hiring the right team to delivering the product. I have experience in building scalable applications, managing teams, and leading projects.",
   "my_technical_skills": "My Technical Skills",
   "coding": "Coding",
   "devops": "DevOps",
   "management": "Management",
   "my_roles": "My Roles",
-  "and_many_more":"And many more",
-  "download_resume":"Download My Resume",
-  "find_me":"You can find me on"
+  "and_many_more": "And many more",
+  "download_resume": "Download My Resume",
+  "find_me": "You can find me on"
 }
